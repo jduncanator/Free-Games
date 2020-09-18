@@ -3,7 +3,7 @@
 
 ##################### EDIT THESE ###############################
 # Replace these with your info
-credentials = [os.getenv("USERNAME"), os.getenv("PASSWORD"), os.getenv("TFA_TOKEN") if len(os.getenv("TFA_TOKEN") > 0 else None)]
+credentials = [os.getenv("USERNAME"), os.getenv("PASSWORD"), os.getenv("TFA_TOKEN") if len(os.getenv("TFA_TOKEN")) > 0 else None]
 
 # You may desire to replace the user-agent below. You can leave it as is or google 'what is my user agent' and copy that between the single quotes below
 user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'
