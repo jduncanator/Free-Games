@@ -17,6 +17,7 @@ user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 import lxml.html, pyotp, re, sys, time, traceback
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -153,7 +154,10 @@ def start_firefox_browser(user_agent):
     profile = webdriver.FirefoxProfile()
     profile.set_preference("general.useragent.override", user_agent) # We will use the user-agent to trick the website into thinking we are a real person. This usually subverts most basic security
 
-    browser = webdriver.Firefox(profile) # Setup the browser object to use our modified profile
+    options = Options()
+    options.add_argument("--headless") # Launch Firefox in headless mode
+    
+    browser = webdriver.Firefox(profile, firefox_options=options) # Setup the browser object to use our modified profile
     browser.maximize_window()
     return browser
 
