@@ -1,6 +1,8 @@
 #! python3
 # Free_Games.py - A script that Windows Task Scheduler can run to go and get me them sweet sweet free games I'll probably never play
 
+import os
+
 ##################### EDIT THESE ###############################
 # Replace these with your info
 credentials = [os.getenv("USERNAME"), os.getenv("PASSWORD"), os.getenv("TFA_TOKEN") if len(os.getenv("TFA_TOKEN")) > 0 else None]
